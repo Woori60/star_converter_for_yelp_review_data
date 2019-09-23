@@ -1,0 +1,27 @@
+c1 = 0
+c2 = 0
+c3 = 0
+c4 = 0
+c5 = 0
+with open('/content/drive/My Drive/dataset/yelp json/user_review_restaurant.json', 'rt', encoding='UTF-8') as f:
+    for line in f:
+        lineobj = json.loads(line)
+        
+        if lineobj['stars'] == 5:
+          c5 = c5+1
+        elif lineobj['stars'] == 4:
+          c4 = c4+1
+        elif lineobj['stars'] == 3:
+          c3 = c3+1
+        elif lineobj['stars'] == 2:
+          c2 = c2+1
+        elif lineobj['stars'] == 1:
+          c1 = c1+1
+        else:
+          print("else???????")
+          
+print(c1)
+print(c2)
+print(c3)
+print(c4)
+print(c5)
