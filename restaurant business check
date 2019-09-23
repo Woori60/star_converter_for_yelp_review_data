@@ -1,0 +1,36 @@
+import json
+# bussiness.json에서 식당 id 리스트
+count=0
+categolist = ['Food', 'Restaurants', 'Desserts', 'Burgers']
+business_id_list = []
+with open('/content/drive/My Drive/dataset/전처리 전 json/business.json', 'r', encoding='UTF-8') as uf:
+  for line in uf:
+    lineobj = json.loads(line)
+    category = lineobj['categories']
+
+    if category is None:
+      continue
+    elif categolist[0] in category:
+      #print(category)
+      business_id_list.append(lineobj['business_id'])
+      count=count+1
+      continue
+    elif categolist[1] in category:
+      #print(category)
+      business_id_list.append(lineobj['business_id'])
+      count=count+1
+      continue
+    elif categolist[2] in category:
+      #print(category)
+      business_id_list.append(lineobj['business_id'])
+      count=count+1
+      continue
+    elif categolist[3] in category:
+      #print(category)
+      business_id_list.append(lineobj['business_id'])
+      count=count+1
+      continue
+    else:
+      continue
+print('식당 bussiness id 개수 : ', count)
+print(business_id_list)
